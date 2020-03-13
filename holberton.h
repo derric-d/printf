@@ -33,4 +33,7 @@ int print_S(va_list S);
 int print_rev(va_list r);
 int print_rot13(va_list R);
 
+int _printf(const char *format, ...);
+int get_function(char *fmt, print_t spec_list, va_list args);
+
 #endif  /* _HOLBERTON_H */
