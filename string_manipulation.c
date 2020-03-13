@@ -4,11 +4,11 @@
  * @s: passed string
  * Return: string rotated
  */
-char *rot13(char *s)
+char *rot13(va_list args)
 {
 	char *original = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 	char *translate = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
-	char *new = s;
+	char *new = va_arg(args, char *);
 	int i;
 
 	while (*new)
@@ -29,8 +29,12 @@ char *rot13(char *s)
  * rev_string - reverses a string in place
  * @head: string passed
  */
-void rev_string(char *head)
+void rev_string(va_list args)
 {
+	char * head;
+
+	head = va_arg(args, char *);
+
 	if (!head)
 		return;
 
