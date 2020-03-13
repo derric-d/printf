@@ -35,6 +35,6 @@ int print_rot13(va_list R);
 
 int _printf(const char *format, ...);
 int get_function(char *fmt, print_t spec_list, va_list args);
-int write_char(char c);
+int _putchar(char c);
 
 #endif  /* _HOLBERTON_H */
