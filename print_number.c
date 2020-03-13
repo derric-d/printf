@@ -19,25 +19,25 @@ int print_num(va_list args)
 		unsigned_num = num * -1;
 	}
 	else
-		num = n;
+		unsigned_num = num;
 
-	while (num / div > 9)
+	while (unsigned_num / div > 9)
 		div = div * 10;
 
 	while (div != 0)
 	{
-		numchars += _putchar(num / div + '0');
-		num %= div;
-		div = div / 10
+		numchars += _putchar(unsigned_num / div + '0');
+		unsigned_num %= div;
+		div = div / 10;
 	}
 	return (numchars);
 }
 /**
  * print_num_unsigned - prints unisgined ints
- * @n: unsigned int being passed
+ * @args: arguments being passed
  * Return: number of characters printed by this function
  */
-int print_num_unsigned(unsigned int n)
+int print_num_unsigned(va_list args)
 {
 	int numchars, num, div;
 	unsigned int unsigned_num;
@@ -45,16 +45,16 @@ int print_num_unsigned(unsigned int n)
 	div = 1;
 	num = va_arg(args, int);
 
-	num = n;
+	unsigned_num = num;
 
-	while (num / div > 9)
+	while (unsigned_num / div > 9)
 		div = div * 10;
 
 	while (div != 0)
 	{
-		numchars += _putchar(num / div + '0');
-		num %= div;
-		div = div / 10
+		numchars += _putchar(unsigned_num / div + '0');
+		unsigned_num %= div;
+		div = div / 10;
 	}
 	return (numchars);
 }

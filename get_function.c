@@ -7,13 +7,15 @@
  * @args: arguments passed in _printf function call
  * Return: number of arguments called
  */
-int get_function(char *fmt, print_t spec_list, va_list args)
+int get_function(const char *fmt, print_t spec_list[], va_list args)
 {
-	int i, j, ret_val, num_chars
+	int i, j, ret_val, numchars;
+
+	numchars = 0;
 
 	for (i = 0; fmt[i] != '\0'; i++)
 	{
-		if (fmt[i] == %) /* if we come across magic symbol*/
+		if (fmt[i] == '%') /* if we come across magic symbol*/
 		{
 			for (j = 0; spec_list[j].sym != NULL; j++)
 			{

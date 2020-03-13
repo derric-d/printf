@@ -7,16 +7,17 @@
 #include <limits.h>
 #include <stdarg.h>
 
-/** specifier_functions - struct to choose function based on specifier
+/**
+ * struct specifier_functions - struct to choose function based on specifier
  * @sym: format specifier
  * @fptr: pointer to function to print
  */
-
-typedef struct specifier_functions
+struct specifier_functions
 {
-      char *sym;
-      int (*fptr)(va_list);
-} print_t;
+	char *sym;
+	int (*fptr)(va_list);
+};
+typedef struct specifier_functions print_t;
 
 int print_char(va_list c);
 int print_string(va_list s);
