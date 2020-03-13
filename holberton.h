@@ -7,7 +7,7 @@
 #include <limits.h>
 #include <stdarg.h>
 
-/** specifier_functions - struct to call function based on specifier
+/** specifier_functions - struct to choose function based on specifier
  * @sym: format specifier
  * @fptr: pointer to function to print
  */
