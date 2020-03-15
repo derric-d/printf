@@ -19,16 +19,10 @@ struct specifier_functions
 };
 typedef struct specifier_functions print_t;
 
-<<<<<<< HEAD
 /*functions from specifiers list*/
 int print_char(va_list c);
 int print_string(va_list s);
 int print_percent(va_list i);
-=======
-int print_char(va_list args);
-int print_string(va_list args);
-int print_percent(va_list args);
->>>>>>> 3e38d08d3af85038bb9c0e2c7024a36f989230cf
 int print_int(va_list d);
 int print_int(va_list i);
 int print_binary(va_list b);
