@@ -13,7 +13,8 @@ int rot13(va_list args)
 	int i, j;
 
 	new = va_arg(args, char *);
-
+	if (new == NULL)
+		return (-1);
 	for (i = 0; new[i] != '\0'; i++)
 	{
 		for (j = 0; original[j]; j++)
@@ -24,17 +25,18 @@ int rot13(va_list args)
 				break;
 			}
 		}
-		new++;
+		if (j == 53)
+			_putchar(new[i]);
 	}
 	return (i);
 }
 
 /**
- * print_str_reversed - prints string once its been reversed
+ * print_rev - prints string once its been reversed
  * @args: args passed from va_list
  * Return: length of string passed and printed
  */
-int print_str_reversed(va_list args)
+int print_rev(va_list args)
 {
 	int len;
 	char *src;

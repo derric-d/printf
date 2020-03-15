@@ -22,15 +22,12 @@ int get_function(const char *fmt, print_t spec_list[], va_list args)
 				if (fmt[i + 1] == spec_list[j].sym[0]) /*if match w/ struct sym member*/
 				{
 					ret_val = spec_list[j].fptr(args); /*call the func at index j if match*/
-
 					if (ret_val == -1)
 						return (-1);
-
 					numchars += ret_val;
 					break;
 				}
 			}
-			/*case no match, still string:print current char, next char &add to count*/
 			if (spec_list[j].sym == NULL && fmt[i + 1] == ' ')
 			{
 				if (fmt[i + 1] != '\0')

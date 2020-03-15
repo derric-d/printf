@@ -19,6 +19,7 @@ struct specifier_functions
 };
 typedef struct specifier_functions print_t;
 
+/*functions from specifiers list*/
 int print_char(va_list c);
 int print_string(va_list s);
 int print_percent(va_list i);
@@ -32,10 +33,18 @@ int print_HEX(va_list X);
 int print_address(va_list p);
 int print_S(va_list S);
 int print_rev(va_list r);
-int print_rot13(va_list R);
+int rot13(va_list R);
 
+/*main functions*/
 int _printf(const char *format, ...);
 int get_function(const char *fmt, print_t spec_list[], va_list args);
 int _putchar(char c);
+
+/*helper functions */
+unsigned int lenbase(unsigned int num, int base);
+char *rev_string(char *s);
+void _putbase(char *s);
+int hexcheck(int num, char hex);
+char *_memcpy(char *dest, char *src, unsigned int i);
 
 #endif  /* _HOLBERTON_H */

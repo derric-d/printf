@@ -14,6 +14,14 @@ int _printf(const char *format, ...)
 		{"c", print_char},
 		{"s", print_string},
 		{"%", print_percent},
+		{"d", print_int},
+		{"i", print_int},
+		{"b", print_binary},
+		{"r", print_rev},
+		{"u", print_unsigned},
+		{"o", print_octal},
+		{"x", print_hex},
+		{"X", print_HEX},
 		{NULL, NULL}
 	};
 
@@ -25,14 +33,4 @@ int _printf(const char *format, ...)
 	va_end(args);
 
 	return (char_count);
-}
-int main()
-{
-	char lettera = 'a';
-	char * hello = "hello";
-	_printf("%%\n");
-	_printf("  ");
-	_printf("%s\n ", hello);
-	_printf(" %c\nhello world\n", lettera);
-	return (0);
 }
