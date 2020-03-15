@@ -4,9 +4,9 @@
  * @list: list of arguments
  * Return: number of characters printed
  */
-int print_char(va_list list)
+int print_char(va_list args)
 {
-	_putchar(va_arg(list, int));
+	_putchar(va_arg(args, int));
 	return (1);
 }
 
@@ -15,10 +15,10 @@ int print_char(va_list list)
  * @list: list of arguments
  * Return: number of characters printed
  */
-int print_string(va_list list)
+int print_string(va_list args)
 {
 	int i;
-	char *ptr = va_arg(list, char *);
+	char *ptr = va_arg(args, char *);
 
 	if (ptr == NULL)
 		ptr = "(null)";
