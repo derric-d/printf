@@ -26,3 +26,13 @@ int _printf(const char *format, ...)
 
 	return (char_count);
 }
+int main()
+{
+	char lettera = 'a';
+	char * hello = "hello";
+	_printf("%%\n");
+	_printf("  ");
+	_printf("%s\n ", hello);
+	_printf(" %c\nhello world\n", lettera);
+	return (0);
+}

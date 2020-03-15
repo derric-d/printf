@@ -32,13 +32,17 @@ int get_function(const char *fmt, print_t spec_list[], va_list args)
 			}
 			/*case no match, still string:print current char, next char &add to count*/
 			if (spec_list[j].sym == NULL && fmt[i + 1] == ' ')
+			{
 				if (fmt[i + 1] != '\0')
 				{
 					_putchar(fmt[i]);
 					_putchar(fmt[i + 1]);
 					numchars += 2;
 				}
-				return (-1);
+				else
+					return (-1);
+			}
+			i++;
 		}
 		else
 		{

@@ -1,4 +1,5 @@
 #include "holberton.h"
+
 /**
  * rot13 - rotates the characters 13 places
  * @args: passed string arguments
@@ -27,39 +28,7 @@ int rot13(va_list args)
 	}
 	return (i);
 }
-/**
- * rev_string - reverses a string in place
- * @head: string passed
- * Return: string reversed in place
- */
-char *rev_string(char *head)
-{
 
-	if (!head)
-		return;
-
-	char *tail;
-	char h, t;
-
-	tail = head;
-
-	while (*tail)
-		++tail;
-	--tail;
-
-	for (; head < tail; head++, tail--)
-	{
-		/*
-		* walk pointers inwards until they meet or cross in the middle
-		* swap head and tail
-		*/
-		h = *head;
-		t = *tail;
-		*head = t;
-		*tail = h;
-	}
-	return (head);
-}
 /**
  * print_str_reversed - prints string once its been reversed
  * @args: args passed from va_list
