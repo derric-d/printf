@@ -13,34 +13,36 @@ int get_function(const char *fmt, print_t spec_list[], va_list args)
 
 	numchars = 0;
 
-	for (i = 0; fmt[i] != '\0'; i++)
+	for (i = 0; fmt[i] != '\0'; i++) /* loop through fmt string */
 	{
 		if (fmt[i] == '%') /* if we come across magic symbol*/
 		{
-			for (j = 0; spec_list[j].sym != NULL; j++)
+			for (j = 0; spec_list[j].sym != NULL; j++) /* loop through struct list */
 			{
 				if (fmt[i + 1] == spec_list[j].sym[0]) /*if match w/ struct sym member*/
-					ret_val = spec_list.fptr(args); /*call the func at index j if match*/
+				{
+					ret_val = spec_list[j].fptr(args); /*call the func at index j if match*/
 
-				if (ret_val == -1)
-					return (-1);
+					if (ret_val == -1)
+						return (-1);
 
-				numchars += ret_val;
-				break;
+					numchars += ret_val;
+					break;
+				}
 			}
 			/*case no match, still string:print current char, next char &add to count*/
-			if (spec_list.sym == NULL && fmt[i + 1] == ' ')
+			if (spec_list[j].sym == NULL && fmt[i + 1] == ' ')
 				if (fmt[i + 1] != '\0')
 				{
-					write_char(fmt[i]);
-					write_char(fmt[i + 1]);
+					_putchar(fmt[i]);
+					_putchar(fmt[i + 1]);
 					numchars += 2;
 				}
 				return (-1);
 		}
 		else
 		{
-			write_char(fmt[i]);
+			_putchar(fmt[i]);
 			numchars++;
 		}
 	}
