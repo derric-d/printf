@@ -19,9 +19,9 @@ struct specifier_functions
 };
 typedef struct specifier_functions print_t;
 
-int print_char(va_list c);
-int print_string(va_list s);
-int print_percent(va_list i);
+int print_char(va_list list);
+int print_string(va_list list);
+int print_percent(va_list list);
 int print_int(va_list d);
 int print_int(va_list i);
 int print_binary(va_list b);
