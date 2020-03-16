@@ -24,14 +24,15 @@ int print_binary(va_list args)
 
 	for (i = 0; num > 0; i++)
 	{
-		if (num % 2 == 0)
-			str[i] = '0';
-		else
-			str[i] = 1;
+		str[i] = num % 2;
 		num = num / 2;
 	}
-	str[i] = '\0';
-
+	#if 0
+	for (i = i - 1; i >= 0; i--)
+	{
+		_putbase(str[i]);
+	}
+	#endif
 	reverse = rev_string(str);
 	if (reverse == NULL)
 		return (-1);
@@ -41,7 +42,25 @@ int print_binary(va_list args)
 	free(reverse);
 	return (len);
 }
+#if 0
+char *_itoa(int num, char str*, int base)
+{
+	int i, isnegative;
 
+	if (num == 0)
+	{
+		str[i++] = '\0';
+		str[i] = '\0';
+		return str;
+	}
+
+	if (num < 0)
+	{
+		
+
+	}
+}
+#endif
 /**
  * print_octal - prints input as octal value
  * @args: arguments list passed

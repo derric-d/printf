@@ -32,7 +32,7 @@ void _putbase(char *str)
  * @base: base of number being porcessed
  * Return: length of number passed
  */
-int lenbase(unsigned int num, int base)
+unsigned int lenbase(unsigned int num, int base)
 {
 	unsigned int i;
 
