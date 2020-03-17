@@ -1,5 +1,4 @@
 #include "holberton.h"
-
 /**
  * rot13 - rotates the characters 13 places
  * @args: passed string arguments

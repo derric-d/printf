@@ -13,15 +13,15 @@ int get_function(const char *fmt, print_t spec_list[], va_list args)
 
 	numchars = 0;
 
-	for (i = 0; fmt[i] != '\0'; i++) /* loop through fmt string */
+	for (i = 0; fmt[i] != '\0'; i++)
 	{
-		if (fmt[i] == '%') /* if we come across magic symbol*/
+		if (fmt[i] == '%')
 		{
-			for (j = 0; spec_list[j].sym != NULL; j++) /* loop through struct list */
+			for (j = 0; spec_list[j].sym != NULL; j++)
 			{
-				if (fmt[i + 1] == spec_list[j].sym[0]) /*if match w/ struct sym member*/
+				if (fmt[i + 1] == spec_list[j].sym[0])
 				{
-					ret_val = spec_list[j].fptr(args); /*call the func at index j if match*/
+					ret_val = spec_list[j].fptr(args);
 					if (ret_val == -1)
 						return (-1);
 					numchars += ret_val;

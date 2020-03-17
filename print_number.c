@@ -34,7 +34,7 @@ int print_int(va_list args)
 	return (numchars);
 }
 /**
- * print_unsigned - prints unisgined ints
+ * print_unsigned - prints unsigned ints
  * @args: arguments being passed
  * Return: number of characters printed by this function
  */

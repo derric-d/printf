@@ -10,17 +10,16 @@ int _printf(const char *format, ...)
 	int char_count;
 	va_list args;
 
-	print_t spec_list[] = {	
+	print_t spec_list[] = {
 		{"R", rot13},
 		{"c", print_char},
 		{"s", print_string},
 		{"d", print_int},
 		{"i", print_int},
-		{"x", print_binary},
 		{"r", print_rev},
 		{"u", print_unsigned},
 		{"o", print_octal},
-		{"b", print_hex},
+		{"x", print_hex},
 		{"X", print_HEX},
 		{NULL, NULL}
 	};

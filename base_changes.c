@@ -1,67 +1,6 @@
 #include "holberton.h"
 
 /**
- * print_binary - prints inout as binary value
- * @args: argument string passed
- * Return: Number of characters printed
- */
-int print_binary(va_list args)
-{
-	unsigned int num;
-	int i, len;
-	char *str;
-	char *reverse;
-
-	num = va_arg(args, unsigned int);
-	if (num == 0)
-		return (_putchar('0'));
-	if (num < 1)
-		return (-1);
-	len = lenbase(num, 2);
-	str = malloc(sizeof(char) * len + 1);
-	if (str == NULL)
-		return (-1);
-
-	for (i = 0; num > 0; i++)
-	{
-		str[i] = num % 2;
-		num = num / 2;
-	}
-	#if 0
-	for (i = i - 1; i >= 0; i--)
-	{
-		_putbase(str[i]);
-	}
-	#endif
-	reverse = rev_string(str);
-	if (reverse == NULL)
-		return (-1);
-
-	_putbase(reverse);
-	free(str);
-	free(reverse);
-	return (len);
-}
-#if 0
-char *_itoa(int num, char str*, int base)
-{
-	int i, isnegative;
-
-	if (num == 0)
-	{
-		str[i++] = '\0';
-		str[i] = '\0';
-		return str;
-	}
-
-	if (num < 0)
-	{
-		
-
-	}
-}
-#endif
-/**
  * print_octal - prints input as octal value
  * @args: arguments list passed
  * Return: Number of characters printed

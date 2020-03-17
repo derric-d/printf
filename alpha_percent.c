@@ -1,7 +1,7 @@
 #include "holberton.h"
 /**
  * print_char - prints a character
- * @list: list of arguments
+ * @args: list of arguments
  * Return: number of characters printed
  */
 int print_char(va_list args)
@@ -12,7 +12,7 @@ int print_char(va_list args)
 
 /**
  * print_string - prints a string
- * @list: list of arguments
+ * @args: list of arguments
  * Return: number of characters printed
  */
 int print_string(va_list args)
@@ -25,6 +25,6 @@ int print_string(va_list args)
 
 	for (i = 0; ptr[i] != '\0'; i++)
 		_putchar(ptr[i]);
-		
+
 	return (i);
 }
