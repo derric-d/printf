@@ -25,7 +25,7 @@ ___
 - All files will be compiled on Ubuntu 14.04 LTS
 - Programs and functions will be compiled with gcc 4.8.4 using flags:
 ```c
-$ ggcc -Wall -Werror -Wextra -pedantic *.c
+$ gcc -Wall -Werror -Wextra -pedantic *.c
  ```
 - All files should end with a new line
 - A README.md file, at the root of the folder of the project is mandatory
@@ -66,8 +66,8 @@ int main(void)
     unsigned int ui;
     void *addr;
 
-    len = _printf("Let's try to printf a simple sentence.\n");
-    len2 = printf("Let's try to printf a simple sentence.\n");
+    len = _printf("Let us try to printf a simple sentence.\n");
+    len2 = printf("Let us try to printf a simple sentence.\n");
     ui = (unsigned int)INT_MAX + 1024;
     addr = (void *)0x7ffe637541f0;
     _printf("Length:[%d, %i]\n", len, len);
@@ -93,9 +93,9 @@ int main(void)
 #### Ouptput:
 ```c
 $ gcc -Wall -Wextra -Werror -pedantic -Wno-format *.c
-$ ./printf
-Let's try to printf a simple sentence.
-Let's try to printf a simple sentence.
+$ ./a.out
+Let us try to printf a simple sentence.
+Let us try to printf a simple sentence.
 Length:[39, 39]
 Length:[39, 39]
 Negative:[-762534]
