@@ -40,7 +40,7 @@ int print_int(va_list args)
  */
 int print_unsigned(va_list args)
 {
-	int numchars, num, div;
+	int numchars = 0, num, div;
 	unsigned int unsigned_num;
 
 	div = 1;
