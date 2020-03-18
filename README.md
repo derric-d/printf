@@ -84,10 +84,6 @@ int main(void)
     printf("Character:[%c]\n", 'H');
     _printf("String:[%s]\n", "I am a string !");
     printf("String:[%s]\n", "I am a string !");
-    _printf("Address:[%p]\n", addr);
-    printf("Address:[%p]\n", addr);
-    len = _printf("Percent:[%%]\n");
-    len2 = printf("Percent:[%%]\n");
     _printf("Len:[%d]\n", len);
     printf("Len:[%d]\n", len2);
     return (0);
@@ -114,10 +110,6 @@ Character:[H]
 Character:[H]
 String:[I am a string !]
 String:[I am a string !]
-Address:[0x7ffe637541f0]
-Address:[0x7ffe637541f0]
-Percent:[%]
-Percent:[%]
 Len:[12]
 Len:[12]
 
